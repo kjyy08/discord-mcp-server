@@ -28,11 +28,11 @@ public class DiscordServiceImpl implements DiscordService {
     private final FileService fileService;
 
     @Value("${discord.server.id}")
-    private String defaultServerId;
+    private String serverId;
 
     @Tool(name = "getChannels", description = "서버의 모든 채널 목록을 조회합니다.")
     @Override
-    public List<ChannelResponseDto> getChannels(@ToolParam(required = false) String serverId) {
+    public List<ChannelResponseDto> getChannels() {
         try {
             return channelService.getChannels(serverId);
         } catch (Exception e) {
@@ -43,8 +43,7 @@ public class DiscordServiceImpl implements DiscordService {
 
     @Tool(name = "getChannelByName", description = "서버에서 채널 이름으로 채널 정보를 조회합니다.")
     @Override
-    public ChannelResponseDto getChannelByName(@ToolParam String serverId,
-                                               @ToolParam String channelName) {
+    public ChannelResponseDto getChannelByName(@ToolParam String channelName) {
         try {
             return channelService.getChannelByName(serverId, channelName);
         } catch (Exception e) {
@@ -55,8 +54,7 @@ public class DiscordServiceImpl implements DiscordService {
 
     @Tool(name = "getChannelById", description = "서버에서 채널 ID로 채널 정보를 조회합니다.")
     @Override
-    public ChannelResponseDto getChannelById(@ToolParam String serverId,
-                                             @ToolParam String channelId) {
+    public ChannelResponseDto getChannelById(@ToolParam String channelId) {
         try {
             return channelService.getChannelById(serverId, channelId);
         } catch (Exception e) {
@@ -116,7 +114,7 @@ public class DiscordServiceImpl implements DiscordService {
 
     @Tool(name = "getMembersByGuildId", description = "서버의 모든 멤버 목록을 조회합니다.")
     @Override
-    public List<MemberResponseDto> getMembersByGuildId(@ToolParam String serverId) {
+    public List<MemberResponseDto> getMembersByGuildId() {
         try {
             return memberService.getMembersByGuildId(serverId);
         } catch (Exception e) {
