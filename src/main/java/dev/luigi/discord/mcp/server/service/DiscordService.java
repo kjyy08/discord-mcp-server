@@ -1,6 +1,7 @@
 package dev.luigi.discord.mcp.server.service;
 
 import dev.luigi.discord.mcp.server.dto.response.ChannelResponseDto;
+import dev.luigi.discord.mcp.server.dto.response.FileResponseDto;
 import dev.luigi.discord.mcp.server.dto.response.MemberResponseDto;
 import dev.luigi.discord.mcp.server.dto.response.MessageResponseDto;
 
@@ -22,4 +23,6 @@ public interface DiscordService {
     List<MemberResponseDto> getMembersByGuildId(); // 서버의 모든 멤버 목록을 조회합니다.
 
     List<MemberResponseDto> getMembersByChannelId(String channelId); // 특정 채널의 멤버 목록을 조회합니다.
+
+    FileResponseDto uploadFile(String channelId, String filePath, String fileName, String description);
 }
