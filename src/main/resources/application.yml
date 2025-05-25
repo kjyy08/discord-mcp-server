@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: discord-mcp-server
+  main:
+    banner-mode: off
+    web-application-type: none
+  ai:
+    mcp:
+      server:
+        name: discord-mcp-server
+        version: 0.0.1
+        stdio: true
+        type: sync
+        instructions: "Discord MCP Server is a server that allows you to interact with Discord's API using the MCP protocol."
+
+server:
+  port: 8181
+
+logging:
+  pattern:
+    console:
+
+discord:
+  token: ${DISCORD_BOT_TOKEN}
+  server:
+    id: ${DISCORD_SERVER_ID}
