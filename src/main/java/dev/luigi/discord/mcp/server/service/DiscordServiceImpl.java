@@ -34,7 +34,7 @@ public class DiscordServiceImpl implements DiscordService {
     @Value("${discord.server.id}")
     private String serverId;
 
-    @Tool(name = "getDiscordChannels", description = "서버의 모든 채널 목록을 조회합니다.")
+    @Tool(name = "getDiscordChannels", description = "디스코드 서버의 모든 채널 목록을 조회합니다.")
     @Override
     public List<ChannelResponseDto> getChannels() {
         try {
@@ -45,7 +45,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "getDiscordChannelByName", description = "서버에서 채널 이름으로 채널 정보를 조회합니다.")
+    @Tool(name = "getDiscordChannelByName", description = "디스코드 서버에서 채널 이름으로 채널 정보를 조회합니다.")
     @Override
     public ChannelResponseDto getChannelByName(@ToolParam String channelName) {
         try {
@@ -56,7 +56,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "getDiscordChannelById", description = "서버에서 채널 ID로 채널 정보를 조회합니다.")
+    @Tool(name = "getDiscordChannelById", description = "디스코드 서버에서 채널 ID로 채널 정보를 조회합니다.")
     @Override
     public ChannelResponseDto getChannelById(@ToolParam String channelId) {
         try {
@@ -67,7 +67,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "sendDiscordMessage", description = "특정 채널로 메시지를 전송합니다.")
+    @Tool(name = "sendDiscordMessage", description = "디스코드 특정 채널로 메시지를 전송합니다.")
     @Override
     public MessageResponseDto sendMessage(@ToolParam String channelId,
                                           @ToolParam String content) {
@@ -84,7 +84,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "getDiscordMessageHistory", description = "특정 채널의 메시지 기록을 조회합니다.")
+    @Tool(name = "getDiscordMessageHistory", description = "디스코드 특정 채널의 메시지 기록을 조회합니다.")
     @Override
     public List<MessageResponseDto> getMessageHistory(@ToolParam String channelId,
                                                       @ToolParam int limit,
@@ -105,7 +105,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "getDiscordMemberById", description = "특정 멤버의 정보를 조회합니다.")
+    @Tool(name = "getDiscordMemberById", description = "디스코드 특정 멤버의 정보를 조회합니다.")
     @Override
     public MemberResponseDto getMemberById(@ToolParam String memberId) {
         try {
@@ -116,7 +116,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "getDiscordMembersByGuildId", description = "서버의 모든 멤버 목록을 조회합니다.")
+    @Tool(name = "getDiscordMembersByGuildId", description = "디스코드 서버의 모든 멤버 목록을 조회합니다.")
     @Override
     public List<MemberResponseDto> getMembersByGuildId() {
         try {
@@ -127,7 +127,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "getDiscordMembersByChannelId", description = "특정 채널의 멤버 목록을 조회합니다.")
+    @Tool(name = "getDiscordMembersByChannelId", description = "디스코드 특정 채널의 멤버 목록을 조회합니다.")
     @Override
     public List<MemberResponseDto> getMembersByChannelId(@ToolParam String channelId) {
         try {
@@ -138,7 +138,7 @@ public class DiscordServiceImpl implements DiscordService {
         }
     }
 
-    @Tool(name = "uploadFileToDiscord", description = "특정 채널에 파일을 업로드합니다.")
+    @Tool(name = "uploadFileToDiscord", description = "디스코드 특정 채널에 파일을 업로드합니다.")
     @Override
     public FileResponseDto uploadFile(@ToolParam String channelId,
                                       @ToolParam(description = "파일의 절대 경로") String filePath,
